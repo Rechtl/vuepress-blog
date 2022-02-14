@@ -1,7 +1,7 @@
 ### zero's Blog
 
 ```js
-let num = 1
+let num = 0
 ```
 
 :smile:
