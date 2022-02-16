@@ -47,6 +47,10 @@ https://api.map.baidu.com/geoconv/v1/?coords=114.21892734521,29.575429778924&fro
 ### 5.  实例代码
 ```js
 /**
+ * <script type="text/javascript" src="https://api.map.baidu.com/api?v=1.0&type=webgl&ak=userAK"></script>
+ */
+
+/**
  * 坐标转换完之后的回调函数
  * @param data
  */
@@ -60,6 +64,7 @@ draw_point = function (data){
  * 加载信息
  */
 function get_team_location() {
+  let convertor = new BMapGL.Convertor();// 获取坐标转换器
   let coords  = [["114","23"],["110","25"],["130","45"]]
   let pointArr = coords.map(function (item){
     console.log(item)
