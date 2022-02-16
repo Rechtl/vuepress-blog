@@ -32,9 +32,9 @@ module.exports = {
                     ],
                 },
                 {
-                    title: 'JS',
+                    title: '前端',
                     children: [
-                        'domToImage',
+                        'domToImage','BMap','VCBuild.exe'
                     ],
                 },
                 {
