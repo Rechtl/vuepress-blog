@@ -4,7 +4,7 @@
       <div class="footer">
         <div class="Links">
           <span>友情链接</span>
-          <a href="https://www.cnblogs.com/deali/"><img title="程序设计实验室" src="../../public/logo/DealiLogo.jpg"></a>
+          <span class="links-logo"><a href="https://www.cnblogs.com/deali/"><img title="程序设计实验室" src="../../public/logo/DealiLogo.jpg"></a></span>
         </div>
         <div class="copyright">
           Copyright © 2022 ZERO. All Rights Reserved
@@ -60,7 +60,7 @@ html, body {
   justify-content: center;
 }
 
-.Links a {
+.links-logo{
   width: 3rem;
   display: flex;
   flex-direction: column;
