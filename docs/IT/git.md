@@ -15,6 +15,13 @@
 六：git push -u origin master -f 
 
  
+### 新建分支
+
+一：git checkout master
+
+二：git checkout -b sqlAPI
+
+三：git push origin sqlAPI
 
 
 
