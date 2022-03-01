@@ -24,6 +24,10 @@
 三：git push origin sqlAPI
 
 
+### 分支合并
+
+一：git merge master
+
 
  
 
