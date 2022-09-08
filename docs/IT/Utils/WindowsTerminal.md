@@ -7,8 +7,7 @@
 网上看到的教程大多数是关于oh-my-posh2的，现在oh-my-posh升级到3了，一些地方有些小的变化。关于oh-my-posh2的教程，[oh-my-posh的作者](https://github.com/JanDeDobbeleer)在GitHub已经讲的很清楚了 [oh-my-posh2](https://github.com/JanDeDobbeleer/oh-my-posh2)。
 
 ------
-
-## 一.安装主题[[1\]](https://zhuanlan.zhihu.com/p/354603010#ref_1)
+## 一.安装主题[\[1\]]
 
 **1.首先**，先贴上oh-my-posh的官方文档：
 
@@ -40,7 +39,7 @@ Install-Module posh-git -Scope CurrentUser
 
 ------
 
-## **二.编辑相应配置文件**[[2\]](https://zhuanlan.zhihu.com/p/354603010#ref_2)
+## **二.编辑相应配置文件**[[2\]]
 
 **1.在Windows Terminal中敲下下面两行命令**
 
@@ -82,11 +81,11 @@ Set-PoshPrompt -Theme JanDeDobbeleer
 
 > 这时，你会发现出现了一些方框，效果并不像图片上那么好。那是因为，还没有给主题安装适应的字体。
 
-![img](../.vuepress/public/img/v2-6744a2687f6245fcf3f7dd5b708228c7_720w.jpg)
+![img](./assets/v2-6744a2687f6245fcf3f7dd5b708228c7_720w.jpg)
 
 ------
 
-## **三.安装Nerd Fonts字体并应用**[[3\]](https://zhuanlan.zhihu.com/p/354603010#ref_3)
+## **三.安装Nerd Fonts字体并应用**[[3\]]
 
 **1.安装字体**
 
@@ -120,7 +119,7 @@ Set-PoshPrompt -Theme JanDeDobbeleer
 - 设置好之后保存settings.json文件（若vscode未开启自动保存设置，可使用CTRL+S进行保存。）
 - 完成之后重启Windows Terminal即可发现样式改变了，若未改变，请重启Windows Terminal。
 
-![img](../.vuepress/public/img/v2-bb147db11591117a813cfce658d0027e_720w.jpg "成功配置Nerd Fonts的power shell")
+![img](./assets/v2-bb147db11591117a813cfce658d0027e_720w.jpg "成功配置Nerd Fonts的power shell")
 
 ------
 
@@ -148,7 +147,7 @@ DejaVuSansMono Nerd Font
 
 **4.使用 \*CTRL+`\* 召唤终端，即可看到样式发生改变，如果看不到，请重启vscode。**
 
-![img](../.vuepress/public/img/v2-d77e3576b75b92c4156cc4bfa11c96f8_720w.jpg)成功配置Nerd Fonts的vscode
+![img](./assets/v2-d77e3576b75b92c4156cc4bfa11c96f8_720w.jpg)成功配置Nerd Fonts的vscode
 
 ------
 ## 五.JetBrains
@@ -164,9 +163,7 @@ Windows Terminal的美化到此结束，一顿操作下来，是不是比以前�
 
 ## 参考
 
-1. [^](https://zhuanlan.zhihu.com/p/354603010#ref_1_0)对GitHub上的oh-my-posh2安装做了一些修改 https://github.com/JanDeDobbeleer/oh-my-posh2#installation
+1. [^](#text_1)对GitHub上的oh-my-posh2安装做了一些修改[#](https://github.com/JanDeDobbeleer/oh-my-posh2#installation)
+
 2. [^](https://zhuanlan.zhihu.com/p/354603010#ref_2_0)oh-my-posh2升级到3过程中所发生的变化 https://ohmyposh.dev/docs/upgrading
 3. [^](https://zhuanlan.zhihu.com/p/354603010#ref_3_0)在oh-my-posh2上，需要安装powerline字体。而在on-my-posh3上，有一些符号已经不支持了，所以需要安装Nerd Fonts字体（字符图标样式号称最全）。
-
-
-

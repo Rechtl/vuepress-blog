@@ -1,4 +1,4 @@
-# 百度地图 BMap
+#   百度地图 BMap
 
 ----
 
@@ -77,5 +77,122 @@ function get_team_location() {
 ----
 ### 参考
 1. [^](https://lbsyun.baidu.com/index.php?title=webapi/guide/changeposition)WebAPI说明文档
+
 2. [^](https://lbsyun.baidu.com/jsdemo.htm#a5_2)百度地图官方实例
 
+
+
+## 二、Vue+BMapGL
+### 1. 引入
+
+> 路径：public/index.html
+
+```html
+    <script src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=你的密钥"></script>
+```
+> 引入BMapGLLib
+```html
+<script type="text/javascript" src="//mapopen.cdn.bcebos.com/github/BMapGLLib/DistanceTool/src/DistanceTool.min.js"></script>
+```
+
+### 2.BMapGL 回调确保引入
+
+```javascript
+const ak = 'xxxx' // 百度的地图密钥
+/**
+ * 异步加载百度地图
+ * @returns {Promise}
+ * @constructor
+ */
+function loadBaiDuMap() {
+    return new Promise(function (resolve, reject) {
+        try {
+            console.log('BMap is defined:', BMapGL === undefined || BMapGL)
+            resolve(BMapGL)
+        } catch (err) {
+            window.init = function () {
+                resolve(BMapGL)
+            }
+            let script = document.createElement('script')
+            script.type = 'text/javascript'
+            script.src = `http://api.map.baidu.com/api?v=1.0&type=webgl&ak=${ak}&callback=init`
+            script.onerror = reject
+            document.body.appendChild(script)
+        }
+    })
+}
+export { loadBaiDuMap }
+/**
+ * 异步加载百度地图,以及绘制工具
+ * @returns {Promise}
+ * @constructor
+ */
+function loadBaiDuDrawMap() {
+    return loadBaiDuMap().then(BMapGL => {
+        let loaded = false
+        try {
+            loaded = (BMapGLLib && BMapGLLib.DrawingManager)
+        } catch (err) {
+            loaded = false
+        }
+        if (!loaded) {
+            console.log('BMapLib.DrawingManager loading!')
+            let script = document.createElement('script')
+            script.type = 'text/javascript'
+            script.src = 'http://mapopen.cdn.bcebos.com/github/BMapGLLib/DrawingManager/src/DrawingManager.min.js'
+            document.body.appendChild(script)
+            let link = document.createElement('link')
+            link.rel = 'stylesheet'
+            link.href = 'http://mapopen.cdn.bcebos.com/github/BMapGLLib/DrawingManager/src/DrawingManager.min.css'
+            document.body.appendChild(link)
+        } else {
+            console.log('BMapLib.DrawingManager is loaded!')
+        }
+        return BMapGL
+    })
+}
+export { loadBaiDuDrawMap }
+
+```
+
+### 3.控件
+
+* 地图类型控件
+	> ```javascript
+	>    let mapTypeControl = new BMapGL.MapTypeControl();
+       map.addControl(mapTypeControl);
+	> ```
+
+* 3D控件
+	>```javascript
+	>let navi3DCtrl = new BMapGL.NavigationControl3D();
+	>map.addControl(navi3DCtrl);
+	>```
+
+* 比例尺控件
+	>```javascript
+	> map.addControl(
+            new BMapGL.ScaleControl({
+              anchor: BMAP_ANCHOR_BOTTOM_LEFT,
+              offset: new BMapGL.Size(10, 10),
+            })
+        );
+	>```
+
+* 缩放控件
+	>```javascript
+	> map.addControl(
+            new BMapGL.ZoomControl({
+              anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+              offset: new BMapGL.Size(10, 10),
+            })
+        );
+	>```
+
+* 定位控件
+	
+	>Chrome浏览器存在问题，Edge可以定位但监听事件无反应
+
+## 三、鹰眼
+
+### 1.上传位置点时间戳限制一年以内

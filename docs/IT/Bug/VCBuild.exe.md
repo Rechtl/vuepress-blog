@@ -2,7 +2,7 @@
 > 安装VCBuild.exe解决npm install报错问题
 ## npm install 报错
 
-![img](../.vuepress/public/img/QNEoX08DPYGAYNRdjDChqRk74wE9B8FS.png)
+![img](./assets/QNEoX08DPYGAYNRdjDChqRk74wE9B8FS.png)
 
 ## 安装 Microsoft Build Tools 2015
 
